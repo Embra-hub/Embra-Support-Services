@@ -19,7 +19,33 @@
 
   <style>
     html {
-      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-behavior: smooth;
+    }
+    .contact-form {
+      background-color: #007bff;
+      color: white;
+      padding: 50px 20px;
+      border-radius: 10px;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      margin-bottom: 15px;
+    }
+    .disclaimer {
+      background-color: #f8f9fa;
+      padding: 30px 20px;
+      margin-top: 40px;
+      border-top: 2px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .disclaimer h3 {
+      color: #003d80;
+      margin-bottom: 15px;
+    }
+    .disclaimer p {
+      color: #333;
+      font-size: 15px;
     }
   </style>
 </head>
@@ -123,8 +149,18 @@
   </div>
 </section>
 
+<!-- Coverage Area -->
+<section class="gallery-sec" id="gallery" style="background-color: #ffffff; padding: 60px 0;">
+  <div class="container text-center">
+    <div class="heading">
+      <h2>Areas Of Coverage</h2>
+    </div>
+    <h4 style="color:black">Southeast London, Orpington, Bromley, Sidcup, Chislehurst, Bickley, Biggin Hill, Swanley & Sevenoaks</h4>
+  </div>
+</section>
+
 <!-- Blog (Tips) -->
-<section class="blog-sec" id="blog">
+<section class="blog-sec" id="blog" style="background-color: #f9f9f9; padding: 60px 0;">
   <div class="container">
     <div class="heading text-center">
       <h2><small>Get Tips and Tricks</small>Hydration for Health</h2>
@@ -149,26 +185,39 @@
   </div>
 </section>
 
-<!-- Coverage Area -->
-<section class="gallery-sec" id="gallery">
-  <div class="container text-center">
-    <div class="heading">
-      <h2>Areas Of Coverage</h2>
-    </div>
-    <h4 style="color:black">Southeast London, Orpington, Bromley, Sidcup, Chislehurst, Bickley, Biggin Hill, Swanley & Sevenoaks</h4>
+<!-- Contact Us Form -->
+<section id="contactus">
+  <div class="container contact-form">
+    <h2 class="text-center">Contact Us</h2>
+    <p class="text-center">We’d love to hear from you! Please fill out the form below.</p>
+    
+    <form action="https://formspree.io/f/mkgvwzqq" method="POST">
+      <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="_replyto" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-light btn-block">Send Message</button>
+    </form>
   </div>
 </section>
 
-<!-- Disclaimer -->
-<section id="contactus" style="background-color: #007bff; color: white; padding: 40px 20px; text-align: center;">
+<!-- Disclaimer Section -->
+<section class="disclaimer">
   <div class="container">
-    <h2>DISCLAIMER</h2>
-    <p>Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing.</p>
-    <p><strong>We are not an emergency service.</strong> Please dial <strong>999</strong> or <strong>112</strong> in urgent situations.</p>
-    <p>Services such as check-ins, pillbox setups, and reminders are supportive only — not clinical or diagnostic.</p>
-    <p>Clients remain responsible for providing accurate healthcare information and taking medications as directed.</p>
-    <p>We do not administer injection treatments unless specially arranged in advance.</p>
-    <p>Services may be adjusted or declined if considered unsafe or beyond our scope.</p>
+    <h3>Disclaimer</h3>
+    <p>
+      Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing.
+We are not an emergency service. Please dial 999 or 112 in urgent situations.
+Services such as check-ins, pillbox setups, and reminders are supportive only — not clinical or diagnostic.
+Clients remain responsible for providing accurate healthcare information and taking medications as directed.
+We do not administer injection treatments unless specially arranged in advance.
+Services may be adjusted or declined if considered unsafe or beyond our scope.
+    </p>
   </div>
 </section>
 
@@ -206,9 +255,4 @@
 
 </body>
 </html>
-
-
-
-
-
 
