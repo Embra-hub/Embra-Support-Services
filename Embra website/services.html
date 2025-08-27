@@ -39,14 +39,13 @@
     color: #0d6efd;
     margin-bottom: 0.75rem;
   }
-  footer .social-links a {
+  .social-links a {
     color: #fff;
     margin: 0 8px;
     font-size: 1.2rem;
-    transition: color 0.3s;
   }
-  footer .social-links a:hover {
-    color: #d1e4ff;
+  .social-links a:hover {
+    color: #d1e7ff;
   }
 </style>
 </head>
@@ -56,10 +55,13 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
   <div class="container d-flex justify-content-between align-items-center">
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <!-- Responsive Brand -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      <span class="d-none d-sm-inline">Embra Support Services</span>
+      <span class="d-inline d-sm-none">Embra Support</span>
+    </a>
 
-    <!-- Toggler (Hamburger) -->
+    <!-- Hamburger -->
     <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#mainNav"
       aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -95,12 +97,13 @@
         </div>
 
         <div class="col-md-4 service-block mb-4">
-          <i class="fas fa-leaf"></i>
+
+<i class="fas fa-leaf"></i>
           <h3>Appointment Escorts</h3>
           <p>Reliable assistance and companionship to and from medical appointments.</p>
         </div>
 
-<div class="col-md-4 service-block mb-4">
+        <div class="col-md-4 service-block mb-4">
           <i class="fas fa-heart"></i>
           <h3>One-to-One Support</h3>
           <p>Personalized, hands-on care tailored to each client's unique needs.</p>
@@ -113,7 +116,7 @@
         </div>
 
         <div class="col-md-6 service-block mb-4">
-          <i class="fas fa-plus"></i>
+          <i class="fas fa-pills"></i>
           <h3>Pillbox Setups</h3>
           <p>Organizing medications into clearly labeled pillboxes for safety and ease.</p>
         </div>
@@ -137,24 +140,23 @@
       <span class="mx-2">🏥 NHS Experience</span>
     </div>
     <p class="mt-2">
-      <a href="tel:+447956515433" style="color:#fff;">
+      <a href="tel:+447956515433" class="text-light me-3">
         <i class="fas fa-phone-alt"></i> +44 7956 515433
       </a>
-      <a href="mailto:embra@embrasupportservices.com" style="color:#fff;">
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
         <i class="fas fa-envelope"></i> embra@embrasupportservices.com
       </a>
     </p>
     <div class="social-links mt-3">
       <a href="https://facebook.com/embrasupport" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/embrasupport" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
   </div>
 </footer>
 
 <!-- Scripts -->
 <script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scrollPosStyler.js"></script>
 <script src="js/swiper.min.js"></script>
@@ -164,6 +166,14 @@
 <script src="js/core.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  // set active nav/aria-current
+  (function(){ 
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a.nav-link').forEach(function(a){
+      var href = a.getAttribute('href');
+      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
+    });
+  })();
 </script>
 </body>
 </html>
