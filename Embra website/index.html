@@ -1,51 +1,63 @@
-Attipoe Lebene, [27/08/2025 12:38 pm]
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Index • Embra Support Services</title>
-<meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
-<link rel="icon" href="img/1.jpg"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embra Support Services • Home</title>
+<meta name="description" content="Compassionate, non-medical in-home support services led by qualified nurses, helping the elderly live independently with dignity.">
+<link rel="icon" href="img/1.jpg">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Index • Embra Support Services"/>
-<meta property="og:description" content="Professional wellbeing support, appointment escorts, pillbox setup, reminders & more."/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="img/1.jpg"/>
-<meta name="theme-color" content="#0d6efd"/>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/custom.css"/>
-<link rel="stylesheet" href="css/loaders.css"/>
-<link rel="stylesheet" href="css/swiper.min.css"/>
-<link rel="stylesheet" href="css/animate.min.css"/>
-<link rel="stylesheet" href="css/nivo-lightbox.css"/>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <style>
+  /* Accessibility & Custom Styles */
   :focus { outline: 3px solid #000; outline-offset: 2px; }
-  .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-  .skip-link:focus { position: static; width: auto; height: auto; padding: 0.5rem; background: #fff; z-index: 1000; }
-  .btn, .nav-link { min-height: 44px; }
-  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-  footer a { text-decoration: none; margin: 0 0.3rem; }
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+    background: #fff;
+    z-index: 1000;
+  }
+  footer a { color: #0d6efd; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .social-links a {
+    margin: 0 8px;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  .social-links a:hover {
+    color: #0d6efd;
+  }
 </style>
 </head>
-
 <body>
-<a href="#main" class="skip-link">Skip to content</a>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Embra<span>SupportServices</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
@@ -56,78 +68,79 @@ Attipoe Lebene, [27/08/2025 12:38 pm]
   </div>
 </nav>
 
-<main id="main" tabindex="-1">
-  <section class="jumbotron text-center bg-white">
+<main id="main">
+  <!-- Hero Section -->
+  <section class="jumbotron text-center bg-white py-5">
     <div class="container">
-      <h1 class="display-5">Compassionate in-home care, and elderly support</h1>
-      <p class="lead">Non-medical, in-home help led by qualified nurses & more.</p>
+      <h1 class="display-5">Compassionate In-Home Care & Elderly Support</h1>
+      <p class="lead">Non-medical, in-home support led by qualified nurses to enhance health and wellbeing.</p>
       <p>
-        <a href="services.html" class="btn btn-primary btn-lg">See Services</a>
-        <a href="contact.html" class="btn btn-outline-primary btn-lg">Book a chat</a>
+        <a class="btn btn-primary btn-lg" href="services.html">Explore Services</a>
+        <a class="btn btn-outline-primary btn-lg" href="contact.html">Book a Consultation</a>
       </p>
       <figure class="mt-4">
-        <img src="img/1.jpg" class="img-fluid rounded" alt="Smiling caregiver supporting an older adult at home"/>
-        <figcaption class="sr-only">A warm, caring interaction at home.</figcaption>
+        <img src="img/1.jpg" class="img-fluid rounded" alt="Caregiver assisting elderly person at home">
+        <figcaption class="visually-hidden">Friendly caregiver assisting a senior with daily needs.</figcaption>
       </figure>
     </div>
   </section>
 
+  <!-- Key Features -->
   <section class="container py-5">
     <div class="row text-center">
       <div class="col-md-4"><h3>Trusted</h3><p>DBS-checked carers with NHS experience.</p></div>
-      <div class="col-md-4"><h3>Flexible</h3><p>Visits from 30 minutes to full day support.</p></div>
-      <div class="col-md-4"><h3>Local</h3><p>We cover Southeast London & nearby.</p></div>
+      <div class="col-md-4"><h3>Flexible</h3><p>Visits from 30 minutes to full day care.</p></div>
+      <div class="col-md-4"><h3>Local</h3><p>Proudly serving Southeast London & nearby.</p></div>
     </div>
   </section>
 
+  <!-- Testimonials -->
   <section class="bg-light py-5">
     <div class="container">
-      <h2 class="text-center mb-4">What clients say</h2>
+      <h2 class="text-center mb-4">What Clients Say</h2>
       <blockquote class="blockquote text-center">
-
-Attipoe Lebene, [27/08/2025 12:38 pm]
-<p class="mb-0">“Embra gave our family peace of mind. Always on time, always kind.”</p>
+        <p class="mb-0">“Embra gave our family peace of mind. Always on time, always kind.”</p>
         <footer class="blockquote-footer">Sarah K., Bromley</footer>
       </blockquote>
     </div>
   </section>
 </main>
 
-<footer class="footer-sec" role="contentinfo">
+<!-- Footer -->
+<footer class="bg-dark text-light py-4" role="contentinfo">
   <div class="container text-center">
-    <p class="mb-1">© <span id="year"></span> Embra Support Services • All rights reserved.</p>
-    <p class="mb-2"><a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></p>
-    <div class="d-flex justify-content-center" aria-label="Trust signals">
+    <p class="mb-1">&copy; <span id="year"></span> Embra Support Services • All rights reserved.</p>
+    <p class="mb-2">
+      <a class="text-light" href="privacy.html">Privacy</a> · 
+      <a class="text-light" href="accessibility.html">Accessibility</a>
+    </p>
+    <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
       <span class="mx-2">✅ Insured</span>
       <span class="mx-2">🛡 DBS Checked</span>
       <span class="mx-2">🏥 NHS Experience</span>
     </div>
-    <p class="mt-3">
-      <a href="tel:+447956515433">  <i class="fa fa-envelope"></i>/> +44 7956 515433</a>
-      |
-      <a href="mailto:embra@embrasupportservices.com"><img src="img/email-icon.png" alt="" width="18" style="margin-right:6px;"/> embra@embrasupportservices.com</a>
+    <p class="mt-2">
+      <a href="tel:+447956515433" class="text-light me-3">
+        <i class="fas fa-phone-alt"></i> +44 7956 515433
+      </a>
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
+        <i class="fas fa-envelope"></i> embra@embrasupportservices.com
+      </a>
     </p>
+    <div class="social-links mt-3">
+      <a href="https://facebook.com/embrasupport" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/embrasupport" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/company/embrasupport" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </div>
 </footer>
 
-<!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scrollPosStyler.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/isotope.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/core.js"></script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  (function(){ 
-    var path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
-    });
-  })();
 </script>
+
 </body>
 </html>
