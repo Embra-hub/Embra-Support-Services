@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Contact • Embra Support Services</title>
-<meta content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing." name="description"/>
-<link href="img/1.jpg" rel="icon"/>
+<meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
+<link rel="icon" href="img/1.jpg"/>
 <!-- Open Graph -->
-<meta content="Contact • Embra Support Services" property="og:title"/>
-<meta content="Professional wellbeing support, appointment escorts, pillbox setup, reminders &amp; more." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="img/1.jpg" property="og:image"/>
-<meta content="#0d6efd" name="theme-color"/>
+<meta property="og:title" content="Contact • Embra Support Services"/>
+<meta property="og:description" content="Professional wellbeing support, appointment escorts, pillbox setup, reminders &amp; more."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="img/1.jpg"/>
+<meta name="theme-color" content="#0d6efd"/>
 <!-- CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
 <link href="css/custom.css" rel="stylesheet"/>
@@ -21,94 +20,102 @@
 <link href="css/swiper.min.css" rel="stylesheet"/>
 <link href="css/animate.min.css" rel="stylesheet"/>
 <link href="css/nivo-lightbox.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <style>
-    /* Accessibility upgrades */
-    :focus { outline: 3px solid #000; outline-offset: 2px; }
-    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
-    nav a { line-height: 1.2; }
-    .btn, .nav-link { min-height: 44px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  </style>
+  /* Accessibility upgrades */
+  :focus { outline: 3px solid #000; outline-offset: 2px; }
+  .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
+  nav a { line-height: 1.2; }
+  .btn, .nav-link { min-height: 44px; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* Footer links faint */
+  .footer-sec a.faint { color: #6c757d; font-size: 0.9rem; }
+  .footer-sec a.faint:hover { text-decoration: underline; color: #495057; }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<nav aria-label="Primary" class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
-<div class="container">
-<a class="navbar-brand" href="index.html">Embra<span>SupportServices</span></a>
-<button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#mainNav" data-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="mainNav">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-<li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
-<li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-</ul>
-</div>
-</div>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation" aria-label="Primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Embra<span>SupportServices</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<!-- MAIN -->
 <main id="main" tabindex="-1">
-<section class="container py-5">
-<h1>Contact us</h1>
-<p>We’d love to hear from you. Fill the form and we’ll get back to you.</p>
-<form aria-describedby="formHelp" id="contactForm" novalidate="">
-<div class="sr-only" id="formHelp">All fields are required.</div>
-<div class="form-group">
-<label for="name">Your name</label>
-<input aria-required="true" class="form-control" id="name" name="name" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="email">Email</label>
-<input aria-required="true" class="form-control" id="email" name="_replyto" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="message">Message</label>
-<textarea aria-required="true" class="form-control" id="message" name="message" required="" rows="5"></textarea>
-</div>
-<button class="btn btn-primary" type="submit">Send message</button>
-</form>
-<p class="mt-3">Prefer email? <a href="mailto:hello@example.com">hello@example.com</a></p>
-</section>
-<script>
-(function() {
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    // Submit to Formspree in the background
-    fetch('https://formspree.io/f/mkgvwzqq', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(function(resp) {
-      // Always redirect to success page with name param for confirmation
-      var name = encodeURIComponent(document.getElementById('name').value || '');
-      window.location.href = 'contact-success.html?name=' + name;
-    }).catch(function() {
-      // Fallback redirect even if request fails (offline)
-      var name = encodeURIComponent(document.getElementById('name').value || '');
-      window.location.href = 'contact-success.html?name=' + name;
-    });
-  });
-})();
-</script>
+  <section class="container py-5">
+    <h1>Contact us</h1>
+    <p>We’d love to hear from you. Fill the form and we’ll get back to you.</p>
+
+    <!-- Contact Form -->
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" class="form-control" required aria-required="true"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" class="form-control" required aria-required="true"/>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" class="form-control" required aria-required="true"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+
+    <p class="mt-3">
+
+<i class="fas fa-envelope"></i>
+      <a href="mailto::embra@embrasupportservices.com"> :embra@embrasupportservices.com</a>
+    </p>
+  </section>
 </main>
-<footer class="footer-sec" role="contentinfo">
-<div class="container text-center">
-<p class="mb-1">© <span id="year"></span> Embra Support Services • All rights reserved.</p>
-<p class="mb-2"><a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></p>
-<div aria-label="Trust signals" class="d-flex justify-content-center">
-<span aria-label="Fully insured" class="mx-2">✅ Insured</span>
-<span aria-label="DBS checked staff" class="mx-2">🛡️ DBS Checked</span>
-<span aria-label="NHS experience" class="mx-2">🏥 NHS Experience</span>
-</div>
-<p class="mt-2"><a href="tel:+44">Call us</a> · <a href="mailto:hello@example.com">hello@example.com</a></p>
-</div>
+
+<!-- FOOTER -->
+<footer class="footer-sec bg-light py-4" role="contentinfo">
+  <div class="container text-center">
+    <p class="mb-1">© <span id="year"></span> Embra Support Services</p>
+    <p class="mb-2">
+      <a href="privacy.html" class="faint">Privacy</a> · 
+      <a href="accessibility.html" class="faint">Accessibility</a>
+    </p>
+    <div aria-label="Trust signals" class="d-flex justify-content-center">
+      <span class="mx-2">✅ Insured</span>
+      <span class="mx-2">🛡 DBS Checked</span>
+      <span class="mx-2">🏥 NHS Experience</span>
+    </div>
+    <p class="mt-2">
+      <i class="fas fa-phone-alt"></i> <a href="tel:+447956515433"> 447956515433</a> · 
+      <i class="fas fa-envelope"></i> <a href="mailto:embra@embrasupportservices.com"> embra@embrasupportservices.com</a>
+    </p>
+    <!-- Socials -->
+    <div class="social mt-2">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f mx-2"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram mx-2"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter mx-2"></i></a>
+    </div>
+  </div>
 </footer>
+
 <!-- JS -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -120,12 +127,35 @@
 <script src="js/core.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
+
+  // Active nav link
   (function(){ 
     var path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
+      if(a.getAttribute('href') === path){
+        a.classList.add('active'); 
+        a.setAttribute('aria-current','page'); 
+      }
+    });
+  })();
+
+  // Contact Form
+  (function() {
+    var form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/mkgvwzqq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function() {
+        var name = encodeURIComponent(document.getElementById('name').value || '');
+        window.location.href = 'contact-success.html?name=' + name;
+      }).catch(function() {
+        var name = encodeURIComponent(document.getElementById('name').value || '');
+        window.location.href = 'contact-success.html?name=' + name;
+      });
     });
   })();
 </script>
