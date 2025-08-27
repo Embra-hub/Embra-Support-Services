@@ -139,6 +139,7 @@
 </footer>
 
 <!-- Scripts -->
+<!-- Scripts -->
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script> <!-- Add this line -->
 <script src="js/bootstrap.min.js"></script>
@@ -148,13 +149,6 @@
 <script src="js/isotope.min.js"></script>
 <script src="js/nivo-lightbox.min.js"></script>
 <script src="js/core.js"></script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
-  (function(){ 
-    var path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
     });
   })();
 </script>
