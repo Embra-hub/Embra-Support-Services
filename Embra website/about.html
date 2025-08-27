@@ -1,88 +1,125 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>About • Embra Support Services</title>
-<meta content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing." name="description"/>
-<link href="img/1.jpg" rel="icon"/>
+<meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
+<link rel="icon" href="img/1.jpg"/>
+
 <!-- Open Graph -->
-<meta content="About • Embra Support Services" property="og:title"/>
-<meta content="Professional wellbeing support, appointment escorts, pillbox setup, reminders &amp; more." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="img/1.jpg" property="og:image"/>
-<meta content="#0d6efd" name="theme-color"/>
-<!-- CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet"/>
-<link href="css/custom.css" rel="stylesheet"/>
-<link href="css/loaders.css" rel="stylesheet"/>
-<link href="css/swiper.min.css" rel="stylesheet"/>
-<link href="css/animate.min.css" rel="stylesheet"/>
-<link href="css/nivo-lightbox.css" rel="stylesheet"/>
+<meta property="og:title" content="About • Embra Support Services"/>
+<meta property="og:description" content="Professional wellbeing support, appointment escorts, pillbox setup, reminders &amp; more."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="img/1.jpg"/>
+<meta name="theme-color" content="#0d6efd"/>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/custom.css"/>
+<link rel="stylesheet" href="css/loaders.css"/>
+<link rel="stylesheet" href="css/swiper.min.css"/>
+<link rel="stylesheet" href="css/animate.min.css"/>
+<link rel="stylesheet" href="css/nivo-lightbox.css"/>
+
 <style>
-    /* Accessibility upgrades */
-    :focus { outline: 3px solid #000; outline-offset: 2px; }
-    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
-    nav a { line-height: 1.2; }
-    .btn, .nav-link { min-height: 44px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  </style>
+  /* Accessibility & tweaks */
+  :focus { outline: 3px solid #000; outline-offset: 2px; }
+  .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
+  nav a { line-height: 1.2; }
+  .btn, .nav-link { min-height: 44px; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* About page styling */
+  .about-sec {
+    padding: 60px 0;
+  }
+  .about-sec h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .about-sec p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<nav aria-label="Primary" class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
-<div class="container">
-<a class="navbar-brand" href="index.html">Embra<span>SupportServices</span></a>
-<button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#mainNav" data-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="mainNav">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-<li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
-<li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-</ul>
-</div>
-</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      <span class="d-none d-sm-inline">Embra Support Services</span>
+      <span class="d-inline d-sm-none">Embra Support Services</span>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<!-- Main Content -->
 <main id="main" tabindex="-1">
-<section class="about-sec parallax-section" id="about">
-<div class="container">
-<div class="row">
-<div class="col-md-3">
-<h2><small>Who We Are</small>About<br/>Our Blog</h2>
-</div>
-<div class="col-md-4">
-<p>Embra Support Services is a compassionate homecare provider that supports elderly individuals in the comfort of their homes.</p>
-<p>We offer non-medical, person-centered services to promote independence and wellbeing, led by qualified professionals including Registered Nurses.</p>
-</div>
-<div class="col-md-4">
-<p>“Our greatest happiness is the result of good conscience, good health, occupation, and freedom in all just pursuits.”</p>
-<p>“Being in control of your life and having realistic expectations is key to a happy, healthy life.”</p>
-</div>
-</div>
-</div>
-</section>
+  <section class="about-sec" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <h2><small>Who We Are</small><br/>About Us</h2>
+        </div>
+        <div class="col-md-4">
+          <p>Embra Support Services is a compassionate homecare provider that supports elderly individuals in the comfort of their homes.</p>
+          <p>We offer non-medical, person-centered services to promote independence and wellbeing, led by qualified professionals including Registered Nurses.</p>
+        </div>
+        <div class="col-md-4">
+
+<p><em>“Our greatest happiness is the result of good conscience, good health, occupation, and freedom in all just pursuits.”</em></p>
+          <p><em>“Being in control of your life and having realistic expectations is key to a happy, healthy life.”</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer-sec" role="contentinfo">
-<div class="container text-center">
-<p class="mb-1">© <span id="year"></span> Embra Support Services • All rights reserved.</p>
-<p class="mb-2"><a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></p>
-<div aria-label="Trust signals" class="d-flex justify-content-center">
-<span aria-label="Fully insured" class="mx-2">✅ Insured</span>
-<span aria-label="DBS checked staff" class="mx-2">🛡️ DBS Checked</span>
-<span aria-label="NHS experience" class="mx-2">🏥 NHS Experience</span>
-</div>
-<p class="mt-2"><a href="tel:+44">Call us</a> · <a href="mailto:hello@example.com">hello@example.com</a></p>
-</div>
+
+<!-- Footer -->
+<footer class="py-4" style="background-color:#0d6efd; color:#fff;" role="contentinfo">
+  <div class="container text-center">
+    <p class="mb-1">&copy; <span id="year"></span> Embra Support Services • All rights reserved.</p>
+    <p class="mb-2"><a class="text-light" href="privacy.html">Privacy</a> · <a class="text-light" href="accessibility.html">Accessibility</a></p>
+    <div class="d-flex justify-content-center" aria-label="Trust signals">
+      <span class="mx-2">✅ Insured</span>
+      <span class="mx-2">🛡 DBS Checked</span>
+      <span class="mx-2">🏥 NHS Experience</span>
+    </div>
+    <p class="mt-2">
+      <a href="tel:+447956515433"  style="color:#fff;"><i class="fas fa-phone-alt"></i> +44 7956 515433</a>
+      <a href="mailto:embra@embrasupportservices.com" <a href="mailto:embra@embrasupportservices.com" style="color:#fff;">"><i class="fas fa-envelope"></i> embra@embrasupportservices.com</a>
+    </p>
+  </div>
 </footer>
-<!-- JS -->
+
+<!-- Scripts -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scrollPosStyler.js"></script>
