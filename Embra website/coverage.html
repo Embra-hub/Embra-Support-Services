@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Embra Support Services • Coverage</title>
-  <meta name="description" content="Areas covered by Embra Support Services for in-home elderly support and care.">
-  <link rel="icon" href="img/1.jpg">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Coverage • Embra Support Services</title>
+  <meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
+  <link rel="icon" href="img/1.jpg"/>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -15,10 +15,7 @@
 
   <style>
     /* Accessibility & Custom Styles */
-    :focus {
-      outline: 3px solid #000;
-      outline-offset: 2px;
-    }
+    :focus { outline: 3px solid #000; outline-offset: 2px; }
     .skip-link {
       position: absolute;
       left: -999px;
@@ -35,125 +32,90 @@
       background: #fff;
       z-index: 1000;
     }
-    footer a {
-      color: #0000FF;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+
+    footer a { color: #0000FF; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
     .social-links a {
       margin: 0 8px;
       color: #fff;
       font-size: 1.2rem;
-      transition: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .social-links a:focus,
-    .social-links a:active {
+    .social-links a:focus, .social-links a:active {
       outline: none !important;
       color: #fff !important;
-    }
-    .disclaimer-card {
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
     }
   </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="coverage.html" aria-current="page">Coverage</a></li>
-        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<main id="main">
-  <!-- Coverage Content -->
-  <section class="py-5">
+  <!-- ✅ Navbar (same as index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
     <div class="container">
-      <h1 class="mb-4 text-center">Our Coverage Areas</h1>
-      <p class="lead text-center">Embra Support Services proudly serves communities across our region, ensuring compassionate in-home support for the elderly.</p>
-
-      <div class="row mt-5">
-        <div class="col-md-6">
-          <h3>Primary Coverage</h3>
-          <ul>
-            <li>Edinburgh</li>
-            <li>Glasgow</li>
-            <li>Stirling</li>
-            <li>Falkirk</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <h3>Extended Areas</h3>
-          <ul>
-            <li>East Lothian</li>
-            <li>West Lothian</li>
-            <li>Scottish Borders</li>
-            <li>Fife</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-4 text-center">
-        <p>If you live outside these areas, please contact us — we may still be able to help or recommend trusted partners.</p>
-        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="coverage.html">Coverage</a></li>
+          <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-</main>
+  </nav>
 
-<!-- Footer -->
-<footer class="py-4" style="background-color: #0d6efd; color: #fff;" role="contentinfo">
-  <div class="container text-center">
-    <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
-    <p class="mb-2">
-      <a class="text-light" href="privacy.html">Privacy</a> ·
-      <a class="text-light" href="accessibility.html">Accessibility</a>
-    </p>
-    <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
-      <span class="mx-2">✅ Insured</span>
-      <span class="mx-2">🛡 DBS Checked</span>
-      <span class="mx-2">🏥 NHS Experience</span>
-    </div>
-    <p class="mt-2">
-      <a href="tel:+447956515433" class="text-light me-3">
-        <i class="fas fa-phone-alt"></i> +44 7956 515433
-      </a>
-      <a href="mailto:embra@embrasupportservices.com" class="text-light">
-        <i class="fas fa-envelope"></i> embra@embrasupportservices.com
-      </a>
-    </p>
-    <div class="social-links mt-3">
-      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    </div>
-  </div>
-</footer>
+  <!-- Main Content -->
+  <main id="main" tabindex="-1">
+    <section class="py-5 bg-white text-center">
+      <div class="container">
+        <h2 class="mb-4">Areas Of Coverage</h2>
+        <h4 class="text-dark">
+          Southeast London, Orpington, Bromley, Sidcup, Chislehurst, Bickley, Biggin Hill, Swanley &amp; Sevenoaks
+        </h4>
+      </div>
+    </section>
+  </main>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <!-- ✅ Footer (same as index.html) -->
+  <footer class="py-4" style="background-color: #0d6efd; color: #fff;" role="contentinfo">
+    <div class="container text-center">
+      <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
+      <p class="mb-2">
+        <a class="text-light" href="privacy.html">Privacy</a> · 
+        <a class="text-light" href="accessibility.html">Accessibility</a>
+      </p>
+      <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
+        <span class="mx-2">✅ Insured</span>
+        <span class="mx-2">🛡 DBS Checked</span>
+        <span class="mx-2">🏥 NHS Experience</span>
+      </div>
+      <p class="mt-2">
+        <a href="tel:+447956515433" class="text-light me-3">
+          <i class="fas fa-phone-alt"></i> +44 7956 515433
+        </a>
+        <a href="mailto:embra@embrasupportservices.com" class="text-light">
+          <i class="fas fa-envelope"></i> embra@embrasupportservices.com
+        </a>
+      </p>
+      <div class="social-links mt-3">
+        <a href="https://facebook.com/embrasupport" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
