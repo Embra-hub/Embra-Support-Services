@@ -15,15 +15,17 @@
 <meta property="og:image" content="img/1.jpg"/>
 <meta name="theme-color" content="#0d6efd"/>
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+
+<!-- Custom Styles -->
 <link rel="stylesheet" href="css/custom.css"/>
 <link rel="stylesheet" href="css/loaders.css"/>
 <link rel="stylesheet" href="css/swiper.min.css"/>
 <link rel="stylesheet" href="css/animate.min.css"/>
 <link rel="stylesheet" href="css/nivo-lightbox.css"/>
 
-<!-- Font Awesome (for icons) -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-9W+wVb1BHQ4jX+UeXfMeEoqLr5b+oYaj5NQxJX+O9bC1iLPv+ZrKq3uv2pB16j7X0YHfCQtWVGh1hZ6F0H+9wA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
@@ -36,19 +38,9 @@
   .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
   /* About page styling */
-  .about-sec {
-    padding: 60px 0;
-  }
-  .about-sec h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
-  .about-sec p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
+  .about-sec { padding: 60px 0; }
+  .about-sec h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .about-sec p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem; }
 
   /* Footer social icons */
   .social-links a {
@@ -57,9 +49,7 @@
     margin: 0 10px;
     transition: color 0.3s ease;
   }
-  .social-links a:hover {
-    color: #ccc;
-  }
+  .social-links a:hover { color: #ccc; }
 </style>
 </head>
 <body>
@@ -67,7 +57,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
-  <div class="container d-flex justify-content-between align-items-center">
+  <div class="container">
     <!-- Brand -->
     <a class="navbar-brand fw-bold" href="index.html">
       <span class="d-none d-sm-inline">Embra Support Services</span>
@@ -75,7 +65,7 @@
     </a>
 
     <!-- Hamburger -->
-    <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#mainNav"
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
       aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -100,8 +90,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4">
-
-<h2><small>Who We Are</small><br/>About Us</h2>
+          <h2><small>Who We Are</small><br/>About Us</h2>
         </div>
         <div class="col-md-4">
           <p>Embra Support Services is a compassionate homecare provider that supports elderly individuals in the comfort of their homes.</p>
@@ -130,10 +119,10 @@
       <span class="mx-2">🏥 NHS Experience</span>
     </div>
     <p class="mt-2">
-      <a href="tel:+447956515433" style="color:#fff; margin-right:15px;">
+      <a href="tel:+447956515433" class="text-light me-3">
         <i class="fas fa-phone-alt"></i> +44 7956 515433
       </a>
-      <a href="mailto:embra@embrasupportservices.com" style="color:#fff;">
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
         <i class="fas fa-envelope"></i> embra@embrasupportservices.com
       </a>
     </p>
@@ -146,8 +135,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scrollPosStyler.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/isotope.min.js"></script>
@@ -156,7 +144,7 @@
 <script src="js/core.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
+  // Set active nav/aria-current
   (function(){ 
     var path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a.nav-link').forEach(function(a){
@@ -167,3 +155,5 @@
 </script>
 </body>
 </html>
+
+  
