@@ -2,50 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Accessibility • Embra Support Services</title>
   <meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
   <meta name="robots" content="noindex"/>
   <link rel="icon" href="img/1.jpg"/>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Accessibility • Embra Support Services"/>
-  <meta property="og:description" content="Professional wellbeing support, appointment escorts, pillbox setup, reminders & more."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="img/1.jpg"/>
-  <meta name="theme-color" content="#0d6efd"/>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/custom.css"/>
-  <link rel="stylesheet" href="css/loaders.css"/>
-  <link rel="stylesheet" href="css/swiper.min.css"/>
-  <link rel="stylesheet" href="css/animate.min.css"/>
-  <link rel="stylesheet" href="css/nivo-lightbox.css"/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <style>
-    /* Accessibility upgrades */
+    /* Accessibility & Custom Styles */
     :focus { outline: 3px solid #000; outline-offset: 2px; }
-    .skip-link { position:absolute; left:-999px; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
-    nav a { line-height: 1.2; }
-    .btn, .nav-link { min-height: 44px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0.5rem;
+      background: #fff;
+      z-index: 1000;
+    }
+
+    footer a { color: #0000FF; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .social-links a {
+      margin: 0 8px;
+      color: #fff;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation" aria-label="Primary">
+<!-- Navigation (same as index.html) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Embra<span>SupportServices</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="mainNav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -57,7 +66,7 @@
   </div>
 </nav>
 
-<!-- Main -->
+<!-- Main Content -->
 <main id="main" tabindex="-1">
   <section class="container py-5">
     <h1>Accessibility Statement</h1>
@@ -70,56 +79,46 @@
     </p>
     <ul>
       <li>Email: <a href="mailto:embra@embrasupportservices.com">embra@embrasupportservices.com</a></li>
-      <li>Phone: <a href="tel:+441234567890">+44 1234 567 890</a></li>
+      <li>Phone: <a href="tel:+447956515433">+44 7956 515433</a></li>
       <li>Or use our <a href="contact.html">contact form</a></li>
     </ul>
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="footer-sec" role="contentinfo">
+<!-- Footer (same as index.html) -->
+<footer class="py-4" style="background-color: #0d6efd; color: #fff;" role="contentinfo">
   <div class="container text-center">
-    <p class="mb-1">© <span id="year"></span> Embra Support Services</p>
+    <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
     <p class="mb-2">
-      <a href="privacy.html">Privacy</a> · 
-      <a href="accessibility.html">Accessibility</a>
+      <a class="text-light" href="privacy.html">Privacy</a> · 
+      <a class="text-light" href="accessibility.html">Accessibility</a>
     </p>
-    <div class="d-flex justify-content-center" aria-label="Trust signals">
-      <span class="mx-2" aria-label="Fully insured">✅ Insured</span>
-
-<span class="mx-2" aria-label="DBS checked staff">🛡 DBS Checked</span>
-      <span class="mx-2" aria-label="NHS experience">🏥 NHS Experience</span>
+    <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
+      <span class="mx-2">✅ Insured</span>
+      <span class="mx-2">🛡 DBS Checked</span>
+      <span class="mx-2">🏥 NHS Experience</span>
     </div>
     <p class="mt-2">
-      <a href="tel:+447956515433">447956515433</a> · 
-      <a href="mailto:embra@embrasupportservices.com">embra@embrasupportservices.com</a>
+      <a href="tel:+447956515433" class="text-light me-3">
+        <i class="fas fa-phone-alt"></i> +44 7956 515433
+      </a>
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
+        <i class="fas fa-envelope"></i> embra@embrasupportservices.com
+      </a>
     </p>
+    <div class="social-links mt-3">
+      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
   </div>
 </footer>
 
-<!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scrollPosStyler.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/isotope.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/core.js"></script>
-
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
-  (function(){ 
-    var path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ 
-        a.classList.add('active'); 
-        a.setAttribute('aria-current','page'); 
-      }
-    });
-  })();
 </script>
+
 </body>
 </html>
