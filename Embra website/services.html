@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Services • Embra Support Services</title>
 <meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
@@ -15,11 +14,13 @@
 <meta property="og:image" content="img/1.jpg"/>
 <meta name="theme-color" content="#0d6efd"/>
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-<!-- Extra CSS -->
+
+<!-- Extra CSS (optional if you use animations/lightbox/etc.) -->
 <link rel="stylesheet" href="css/custom.css"/>
 <link rel="stylesheet" href="css/loaders.css"/>
 <link rel="stylesheet" href="css/swiper.min.css"/>
@@ -43,6 +44,7 @@
     color: #fff;
     margin: 0 8px;
     font-size: 1.2rem;
+    transition: color 0.2s;
   }
   .social-links a:hover {
     color: #d1e7ff;
@@ -50,24 +52,16 @@
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
-  <div class="container d-flex justify-content-between align-items-center">
-    <!-- Responsive Brand -->
-    <a class="navbar-brand fw-bold" href="index.html">
-      <span class="d-none d-sm-inline">Embra Support Services</span>
-      <span class="d-inline d-sm-none">Embra Support Services</span>
-    </a>
-
-    <!-- Hamburger -->
-    <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#mainNav"
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
       aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Nav Links -->
     <div class="collapse navbar-collapse justify-content-end" id="mainNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -97,8 +91,7 @@
         </div>
 
         <div class="col-md-4 service-block mb-4">
-
-<i class="fas fa-leaf"></i>
+          <i class="fas fa-leaf"></i>
           <h3>Appointment Escorts</h3>
           <p>Reliable assistance and companionship to and from medical appointments.</p>
         </div>
@@ -140,10 +133,10 @@
       <span class="mx-2">🏥 NHS Experience</span>
     </div>
     <p class="mt-2">
-      <a href="tel:+447956515433" style="color:#fff;">
+      <a href="tel:+447956515433" class="text-light me-3">
         <i class="fas fa-phone-alt"></i> +44 7956 515433
       </a>
-     <a href="mailto:embra@embrasupportservices.com" style="color:#fff;">
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
         <i class="fas fa-envelope"></i> embra@embrasupportservices.com
       </a>
     </p>
@@ -156,24 +149,10 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scrollPosStyler.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/isotope.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/core.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
-  (function(){ 
-    var path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
-    });
-  })();
 </script>
 </body>
 </html>
