@@ -51,24 +51,15 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Navigation (updated to match index.html) -->
-<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Primary" role="navigation">
-  <div class="container d-flex justify-content-between align-items-center">
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold" href="index.html">
-      <span class="d-none d-sm-inline">Embra Support Services</span>
-      <span class="d-inline d-sm-none">Embra Support Services</span>
-    </a>
-
-    <!-- Hamburger -->
-    <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#mainNav"
-      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+<!-- ✅ Fixed Navigation (Bootstrap 5 syntax, matches index.html) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -124,8 +115,7 @@
 </footer>
 
 <!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/scrollPosStyler.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/isotope.min.js"></script>
@@ -134,14 +124,7 @@
 <script src="js/core.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // set active nav/aria-current
-  (function(){ 
-    var path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a.nav-link').forEach(function(a){
-      var href = a.getAttribute('href');
-      if(href === path){ a.classList.add('active'); a.setAttribute('aria-current','page'); }
-    });
-  })();
 </script>
 </body>
 </html>
+
