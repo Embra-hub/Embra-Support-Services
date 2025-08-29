@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact-success • Embra Support Services</title>
+<meta name="description" content="Embra Support Services offers non-medical, in-home support led by qualified nurses, focused on health and wellbeing."/>
+<link rel="icon" href="img/1.jpg"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Contact-success • Embra Support Services"/>
+<meta property="og:description" content="Professional wellbeing support, appointment escorts, pillbox setup, reminders &amp; more."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="img/1.jpg"/>
+<meta name="theme-color" content="#0d6efd"/>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+  :focus { outline: 3px solid #000; outline-offset: 2px; }
+  .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .skip-link:focus { position: static; width:auto; height:auto; padding:0.5rem; background:#fff; z-index:1000; }
+  nav a { line-height: 1.2; }
+  .btn, .nav-link { min-height: 44px; }
+
+  /* Footer socials */
+  .social-links a {
+    margin: 0 8px;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Navbar (copied from index.html) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main -->
+<main id="main" tabindex="-1">
+  <section class="container py-5 text-center">
+    <h1 id="thanks">Thanks!</h1>
+    <p>We’ve received your message and will reply shortly.</p>
+    <p>
+      <a href="index.html" class="btn btn-primary">Back to Home</a>
+      <a href="services.html" class="btn btn-outline-primary">See Services</a>
+    </p>
+  </section>
+
+  <script>
+    // Personalize with the user's name from query string
+    var params = new URLSearchParams(window.location.search);
+    var name = params.get('name');
+    if (name) {
+      document.getElementById('thanks').textContent = 'Thanks, ' + decodeURIComponent(name) + '!';
+    }
+  </script>
+</main>
+
+<!-- Footer (copied from index.html) -->
+<footer class="py-4" style="background-color: #0d6efd; color: #fff;" role="contentinfo">
+  <div class="container text-center">
+    <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
+    <p class="mb-2">
+      <a class="text-light" href="privacy.html">Privacy</a> · 
+      <a class="text-light" href="accessibility.html">Accessibility</a>
+    </p>
+    <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
+      <span class="mx-2">✅ Insured</span>
+      <span class="mx-2">🛡 DBS Checked</span>
+      <span class="mx-2">🏥 NHS Experience</span>
+    </div>
+    <p class="mt-2">
+      <a href="tel:+447956515433" class="text-light me-3">
+        <i class="fas fa-phone-alt"></i> +44 7956 515433
+      </a>
+      <a href="mailto:embra@embrasupportservices.com" class="text-light">
+        <i class="fas fa-envelope"></i> embra@embrasupportservices.com
+      </a>
+    </p>
+    <div class="social-links mt-3">
+      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // highlight active nav
+  (function(){ 
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a.nav-link').forEach(function(a){
+      if(a.getAttribute('href') === path){
+        a.classList.add('active');
+        a.setAttribute('aria-current','page');
+      }
+    });
+  })();
+</script>
+</body>
+</html>
