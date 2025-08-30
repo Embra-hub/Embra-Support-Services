@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Agreement • Embra Support Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    canvas { border: 1px solid #ccc; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="img/jpg" alt="Embra Support Services Logo" style="max-height: 100px;">
+    </div>
+
+    <h1 class="text-center mb-4">Client Agreement Form</h1>
+
+    <form id="clientAgreementForm">
+      <!-- Client Info -->
+      <h4>1. Client Information</h4>
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" name="clientName" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Address</label>
+        <textarea name="clientAddress" class="form-control" rows="2" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" name="clientPhone" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Emergency Contact</label>
+        <input type="text" name="emergencyContact" class="form-control">
+      </div>
+
+      <!-- Services -->
+      <h4>2. Services to be Provided</h4>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Appointment Escorts"> Appointment Escorts</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Pillbox Setups"> Pillbox Setups</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Medication Reminders"> Medication Reminders</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="One-to-One Support"> One-to-One Support</div>
+      <div class="mb-3">
+        <label class="form-label">Other (please specify)</label>
+        <input type="text" name="servicesOther" class="form-control">
+      </div>
+
+      <!-- Terms (static text) -->
+      <h4>3. Terms of Service</h4>
+      <p>Services are provided by trained EMBRA staff. We commit to respectful, safe, and confidential support.</p>
+
+      <h4>4. Fees & Payment</h4>
+      <p>Fees are agreed in advance. Invoices are weekly/fortnightly. Travel/weekend surcharges may apply.</p>
+
+      <h4>5. Cancellation Policy</h4>
+      <p>24 hours’ notice required. Late cancellations may be charged 50% of service fee.</p>
+
+      <h4>6. Confidentiality & Data Protection</h4>
+      <p>We comply with GDPR. Your information is stored securely and shared only with consent.</p>
+
+      <h4>7. Feedback & Concerns</h4>
+      <p>You may raise concerns at any time. We aim to resolve quickly and respectfully.</p>
+
+      <!-- Consent -->
+      <h4>8. Consent & Agreement</h4>
+      <p>"I agree to receive support from EMBRA Support Services. I understand the terms."</p>
+
+      <!-- Signature -->
+      <div class="mb-3">
+        <label class="form-label">Client Signature</label>
+        <canvas id="signature-pad" width="400" height="150"></canvas>
+        <button type="button" id="clear" class="btn btn-sm btn-secondary mt-2">Clear</button>
+        <input type="hidden" name="signature" id="signature">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" name="date" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Agreement</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+  <script>
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas);
+    document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
+
+    document.getElementById('clientAgreementForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!signaturePad.isEmpty()) {
+        document.getElementById('signature').value = signaturePad.toDataURL();
+      }
+      const data = new FormData(this);
+      fetch('https://formspree.io/f/mkgvwzqq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(() => window.location.href = 'contact-success.html')
+        .catch(() => window.location.href = 'contact-success.html');
+    });
+  </script>
+</body>
+</html>

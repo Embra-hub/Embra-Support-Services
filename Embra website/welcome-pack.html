@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Welcome Pack • EMBRA Support Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="img/logo.png" alt="Embra Support Services Logo" style="max-height: 100px;">
+    </div>
+
+    <h1 class="text-center mb-4">Client Welcome Pack & Agreement</h1>
+
+    <form id="welcomeForm">
+      <!-- Client Details -->
+      <h4>1. Client Details</h4>
+      <div class="mb-3">
+        <label class="form-label">Client Name</label>
+        <input type="text" name="clientName" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Start Date</label>
+        <input type="date" name="startDate" class="form-control" required>
+      </div>
+
+      <!-- Services Agreed -->
+      <h4>2. Services Agreed (✓ all that apply)</h4>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Appointment Escort"> Appointment Escort</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Pillbox Setup"> Pillbox Setup</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Medication Reminder"> Medication Reminder</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="One-to-One Support"> One-to-One Support</div>
+      <div class="mb-3">
+        <label class="form-label">Other (please specify)</label>
+        <input type="text" name="otherService" class="form-control">
+      </div>
+
+      <!-- Visit Frequency -->
+      <h4>3. Visit Frequency</h4>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="One-time"> One-time</div>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="Weekly"> Weekly</div>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="Multiple times per week"> Multiple times per week</div>
+      <div class="form-check mb-3"><input class="form-check-input" type="radio" name="frequency" value="As needed"> As needed</div>
+
+      <!-- Payment Terms -->
+      <h4>4. Payment Terms</h4>
+      <div class="mb-3">
+        <label class="form-label">Rate (£)</label>
+        <input type="number" name="rate" step="0.01" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Payment Due</label><br>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="paymentDue" value="Weekly"> Weekly</div>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="paymentDue" value="Monthly"> Monthly</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Method Accepted</label><br>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="paymentMethod" value="Bank Transfer"> Bank Transfer</div>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="paymentMethod" value="Cash"> Cash</div>
+        <div class="form-check form-check-inline">Other: <input type="text" name="otherPaymentMethod" class="form-control d-inline-block" style="width:auto;"></div>
+      </div>
+
+      <!-- Agreement -->
+      <h4>5. Agreement</h4>
+      <p>By signing below, both parties agree to the terms outlined.</p>
+
+      <!-- Signature -->
+      <div class="mb-3">
+        <label class="form-label">Client/Representative Signature</label>
+        <canvas id="signature-pad" width="400" height="150"></canvas>
+        <button type="button" id="clear" class="btn btn-sm btn-secondary mt-2">Clear</button>
+        <input type="hidden" name="signature" id="signature">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">EMBRA Representative Signature</label>
+        <input type="text" name="embraSignature" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" name="date" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Agreement</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+  <script>
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas);
+    document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
+
+    document.getElementById('welcomeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!signaturePad.isEmpty()) {
+        document.getElementById('signature').value = signaturePad.toDataURL();
+      }
+      const data = new FormData(this);
+      fetch('https://formspree.io/f/mkgvwzqq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(() => window.location.href = 'success.html')
+        .catch(() => window.location.href = 'success.html');
+    });
+  </script>
+</body>
+</html>
