@@ -7,25 +7,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #ffffff; /* Pure white background */
       margin: 0;
+      font-family: Arial, sans-serif;
     }
     header {
-      background-color: transparent; /* No blue background */
-      padding: 15px 0;
+      background-color: #ffffff; /* Same white as the page */
+      padding: 10px 0; /* Reduced padding to push content up */
       text-align: center;
     }
     header img {
-      max-height: 160px;
+      max-height: 180px;
     }
-    header p {
-      color: #333; /* Dark text for tagline */
-      margin: 8px 0 0;
-      font-size: 1.1rem;
-      font-weight: 500;
+    h1 {
+      margin-top: 15px; /* Less gap between logo and heading */
+      margin-bottom: 25px;
+      font-size: 2rem;
+      color: #333;
+      font-weight: 700;
     }
     h4 {
-      margin-top: 30px;
+      margin-top: 25px;
       font-weight: 600;
       color: #333;
     }
@@ -51,14 +53,13 @@
 </head>
 <body>
 
-  <!-- Header without blue background -->
+  <!-- Header -->
   <header>
     <img src="img/12.png" alt="Embra Support Services Logo" class="img-fluid">
-    <p>Compassionate In-Home Care & Elderly Support</p>
   </header>
 
-  <div class="container py-5">
-    <h1 class="text-center mb-4">Client Welcome Pack & Agreement</h1>
+  <div class="container pt-3 pb-5">
+    <h1 class="text-center">Client Welcome Pack & Agreement</h1>
 
     <form id="welcomeForm">
       <!-- Client Details -->
