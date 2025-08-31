@@ -22,53 +22,6 @@
   footer a:hover { text-decoration: underline; }
   .social-links a { margin: 0 8px; color: #fff; font-size: 1.2rem; }
   .disclaimer-card { background-color: #fff3cd; border: 1px solid #ffeeba; }
-
-   .navbar-collapse {
-  display: none !important; /* Hide by default */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  z-index: 9999;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.navbar-collapse.show {
-  display: block !important; /* Show when toggled */
-}
-
-
-  /* ✅ Fix for Sticky Navbar and Mobile Overlay Menu */
-  body {
-    padding-top: 75px; /* Prevent content from going under fixed navbar */
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: #fff !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-collapse {
-    transition: none;
-  }
-
-  .navbar-collapse.collapse.show {
-    display: block !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 9999;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
 </style>
 </head>
 <body>
@@ -179,4 +132,3 @@
 </script>
 </body>
 </html>
-
