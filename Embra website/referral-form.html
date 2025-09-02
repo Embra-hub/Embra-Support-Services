@@ -1,129 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Referral Form • Embra Support Services</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <style>
-    canvas { border: 1px solid #ccc; border-radius: 5px; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Referral Form • Embra Support Services</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+    h4 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <!-- Logo -->
-    <div class="text-center mb-4">
-      <img src="img/logo.png" alt="Embra Support Services Logo" style="max-height: 100px;">
-    </div>
+<div class="container py-5">
+<!-- Logo -->
+<div class="text-center mb-4">
+<img alt="Embra Support Services Logo" src="img/12.png" style="max-height: 180px;"/>
+</div>
+<h1 class="text-center mb-4">Referral Form</h1>
+<form class="emb-auto-pdf" data-form-title="Referral Form • Embra Support Services" id="referralForm" method="post">
+<!-- Referrer -->
+<h4>1. Referral Details</h4>
+<div class="mb-3">
+<label class="form-label">Full Name</label>
+<input class="form-control" name="referrerName" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Role/Relationship</label>
+<input class="form-control" name="referrerRole" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Phone Number</label>
+<input class="form-control" name="referrerPhone" type="tel"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Email Address</label>
+<input class="form-control" name="referrerEmail" required="" type="email"/>
+</div>
+<!-- Client -->
+<h4>2. Client Details</h4>
+<div class="mb-3">
+<label class="form-label">Full Name</label>
+<input class="form-control" name="clientName" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Date of Birth</label>
+<input class="form-control" name="clientDob" type="date"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Address</label>
+<textarea class="form-control" name="clientAddress" rows="2"></textarea>
+</div>
+<div class="mb-3">
+<label class="form-label">Phone Number</label>
+<input class="form-control" name="clientPhone" type="tel"/>
+</div>
+<div class="mb-3">
+<label class="form-label">GP</label>
+<input class="form-control" name="clientGp" type="text"/>
+</div>
+<!-- Support Type -->
+<h4>3. Type of Support Needed</h4>
+<div class="row">
+<div class="col-md-6">
+<div class="form-check"><input class="form-check-input" name="support" type="checkbox" value="Wellbeing Check-ins"/> Wellbeing Check-ins</div>
+<div class="form-check"><input class="form-check-input" name="support" type="checkbox" value="Appointment Escorts"/> Appointment Escorts</div>
+<div class="form-check"><input class="form-check-input" name="support" type="checkbox" value="Pillbox Setups"/> Pillbox Setups</div>
+</div>
+<div class="col-md-6">
+<div class="form-check"><input class="form-check-input" name="support" type="checkbox" value="Medication Reminders"/> Medication Reminders</div>
+<div class="form-check"><input class="form-check-input" name="support" type="checkbox" value="One-to-One Support"/> One-to-One Support</div>
+</div>
+</div>
+<div class="mb-3 mt-2">
+<label class="form-label">Other (please specify)</label>
+<input class="form-control" name="supportOther" type="text"/>
+</div>
+<!-- Reason -->
+<h4>4. Reason for Referral</h4>
+<textarea class="form-control mb-3" name="reason" rows="3"></textarea>
+<!-- Start Date -->
+<h4>5. Preferred Start Date</h4>
+<input class="form-control mb-3" name="startDate" type="date"/>
+<!-- Consent -->
+<h4>6. Consent to Contact</h4>
+<div class="form-check mb-3">
+<input class="form-check-input" name="consent" type="checkbox" value="Yes"/>
+<label class="form-check-label">I confirm that the client has given consent to be contacted by EMBRA Support Services.</label>
+</div>
+<!-- Referral Signature -->
+<h4>7. Referral Signature</h4>
+<div class="mb-3">
+<label class="form-label">Signature</label>
+<canvas height="150" id="referrer-signature-pad" width="400"></canvas>
+<div class="text-center mt-2">
+<button class="btn btn-sm btn-secondary" id="clear-referrer" type="button">Clear</button>
+</div>
+<input id="referrerSignature" name="referrerSignature" type="hidden"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Date</label>
+<input class="form-control" name="referrerDate" required="" type="date"/>
+</div>
+<!-- Client Signature -->
+<h4>8. Client Signature</h4>
+<div class="mb-3">
+<label class="form-label">Signature</label>
+<canvas height="150" id="client-signature-pad" width="400"></canvas>
+<div class="text-center mt-2">
+<button class="btn btn-sm btn-secondary" id="clear-client" type="button">Clear</button>
+</div>
+<input id="clientSignature" name="clientSignature" type="hidden"/>
+</div>
+<div class="mb-3">
+<label class="form-label">Date</label>
+<input class="form-control" name="clientDate" required="" type="date"/>
+</div>
+<button class="btn btn-primary" type="submit">Submit Referral</button>
+<input name="_form_source" type="hidden" value="Referral Form • Embra Support Services"/></form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script>
+    // Referrer Signature
+    const referrerCanvas = document.getElementById('referrer-signature-pad');
+    const referrerPad = new SignaturePad(referrerCanvas);
+    document.getElementById('clear-referrer').addEventListener('click', () => referrerPad.clear());
 
-    <h1 class="text-center mb-4">Referral Form</h1>
+    // Client Signature
+    const clientCanvas = document.getElementById('client-signature-pad');
+    const clientPad = new SignaturePad(clientCanvas);
+    document.getElementById('clear-client').addEventListener('click', () => clientPad.clear());
 
-    <form id="referralForm">
-      <!-- Referrer -->
-      <h4>1. Referrer Details</h4>
-      <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" name="referrerName" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Role/Relationship</label>
-        <input type="text" name="referrerRole" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Phone Number</label>
-        <input type="tel" name="referrerPhone" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Email Address</label>
-        <input type="email" name="referrerEmail" class="form-control" required>
-      </div>
-
-      <!-- Client -->
-      <h4>2. Client Details</h4>
-      <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" name="clientName" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Date of Birth</label>
-        <input type="date" name="clientDob" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Address</label>
-        <textarea name="clientAddress" class="form-control" rows="2"></textarea>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Phone Number</label>
-        <input type="tel" name="clientPhone" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">GP (optional)</label>
-        <input type="text" name="clientGp" class="form-control">
-      </div>
-
-      <!-- Support Type -->
-      <h4>3. Type of Support Needed</h4>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="support" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="support" value="Appointment Escorts"> Appointment Escorts</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="support" value="Pillbox Setups"> Pillbox Setups</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="support" value="Medication Reminders"> Medication Reminders</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="support" value="One-to-One Support"> One-to-One Support</div>
-      <div class="mb-3">
-        <label class="form-label">Other (please specify)</label>
-        <input type="text" name="supportOther" class="form-control">
-      </div>
-
-      <!-- Reason -->
-      <h4>4. Reason for Referral</h4>
-      <textarea name="reason" class="form-control mb-3" rows="3"></textarea>
-
-      <!-- Start Date -->
-      <h4>5. Preferred Start Date</h4>
-      <input type="date" name="startDate" class="form-control mb-3">
-
-      <!-- Consent -->
-      <h4>6. Consent to Contact</h4>
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" name="consent" value="Yes">
-        <label class="form-check-label">I confirm that the client has given consent to be contacted by EMBRA Support Services.</label>
-      </div>
-
-      <!-- Signature -->
-      <h4>7. Referrer Signature</h4>
-      <div class="mb-3">
-        <label class="form-label">Signature</label>
-        <canvas id="signature-pad" width="400" height="150"></canvas>
-        <button type="button" id="clear" class="btn btn-sm btn-secondary mt-2">Clear</button>
-        <input type="hidden" name="signature" id="signature">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Date</label>
-        <input type="date" name="date" class="form-control" required>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit Referral</button>
-    </form>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
-  <script>
-    const canvas = document.getElementById('signature-pad');
-    const signaturePad = new SignaturePad(canvas);
-    document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
-
+    // Form submission
     document.getElementById('referralForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      if (!signaturePad.isEmpty()) {
-        document.getElementById('signature').value = signaturePad.toDataURL();
+
+      if (!referrerPad.isEmpty()) {
+        document.getElementById('referrerSignature').value = referrerPad.toDataURL();
       }
+      if (!clientPad.isEmpty()) {
+        document.getElementById('clientSignature').value = clientPad.toDataURL();
+      }
+
       const data = new FormData(this);
       fetch('https://formspree.io/f/mkgvwzqq', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
-      }).then(() => window.location.href = 'contact-success.html')
-        .catch(() => window.location.href = 'contact-success.html');
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = 'contact-success.html';
+        } else {
+          alert('Error submitting form. Please try again.');
+        }
+      }).catch(() => {
+        alert('Network error. Please check your connection and try again.');
+      });
     });
   </script>
-</body>
+<script src="js/emb-form-submit.js"></script></body>
 </html>
