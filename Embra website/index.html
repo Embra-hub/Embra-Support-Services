@@ -22,6 +22,61 @@
   footer a:hover { text-decoration: underline; }
   .social-links a { margin: 0 8px; color: #fff; font-size: 1.2rem; }
   .disclaimer-card { background-color: #fff3cd; border: 1px solid #ffeeba; }
+
+  /* Cookie Banner Styling */
+  #cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: #fff;
+    padding: 15px 20px;
+    display: none;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  #cookie-consent p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cookie-buttons {
+    margin-top: 5px;
+  }
+
+  #cookie-consent button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #accept-cookies {
+    background: #4CAF50;
+    color: #fff;
+  }
+
+  #decline-cookies {
+    background: #f44336;
+    color: #fff;
+  }
+
+  #cookie-consent button:hover {
+    opacity: 0.9;
+  }
+
+  footer a#manage-cookies {
+    color: #ffcc00;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-left: 10px;
+  }
 </style>
 </head>
 <body>
@@ -55,7 +110,7 @@
       <p class="lead">Non-medical, in-home support led by qualified nurses to enhance health and wellbeing.</p>
       <p>
         <a class="btn btn-primary btn-lg" href="files.html">📄 View &amp; Fill Forms</a>
-        <a class="btn btn-outline-primary btn-lg" href="contact.html">Book a Chat</a>
+        <a class="btn btn-outline-primary btn-lg" href="contact.html">Book a Chat Today</a>
       </p>
     </div>
   </section>
@@ -69,7 +124,8 @@
           <div class="swiper-slide"><img src="img/8.jpg" alt="Gallery 2" class="img-fluid"></div>
           <div class="swiper-slide"><img src="img/6.jpg" alt="Gallery 3" class="img-fluid"></div>
         </div>
-        <div class="swiper-button-prev"></div>
+
+<div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
@@ -86,7 +142,7 @@
     </div>
   </section>
 
-  <!-- Disclaimer -->
+<!-- Disclaimer -->
   <section class="py-5">
     <div class="container d-flex justify-content-center">
       <div class="card disclaimer-card shadow-sm p-4 text-center" style="max-width: 800px;">
@@ -106,7 +162,7 @@
 <footer class="py-4" style="background-color: #0d6efd; color: #fff;">
   <div class="container text-center">
     <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
-    <p><a class="text-light" href="privacy.html">Privacy</a> · <a class="text-light" href="accessibility.html">Accessibility</a></p>
+    <p><a class="text-light" href="privacy.html">Privacy</a> · <a class="text-light" href="accessibility.html">Accessibility</a> · <a href="#" id="manage-cookies">Manage Cookies</a></p>
     <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
       <span class="mx-2">✅ Insured</span>
       <span class="mx-2">🛡 DBS Checked</span>
@@ -124,6 +180,18 @@
   </div>
 </footer>
 
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent">
+  <p>
+    We use cookies to improve your browsing experience and analyze website traffic. 
+    By clicking "Accept", you consent to our use of cookies.
+  </p>
+  <div class="cookie-buttons">
+    <button id="accept-cookies">Accept</button>
+    <button id="decline-cookies">Decline</button>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
@@ -133,6 +201,33 @@
     autoplay: { delay: 4000, disableOnInteraction: false },
     pagination: { el: '.swiper-pagination', clickable: true },
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+  });
+
+  // Cookie Consent Script
+  const cookieConsent = document.getElementById("cookie-consent");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const declineBtn = document.getElementById("decline-cookies");
+  const manageLink = document.getElementById("manage-cookies");
+
+  if (!localStorage.getItem("cookieConsent")) {
+    cookieConsent.style.display = "block";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    cookieConsent.style.display = "none";
+  });
+
+  declineBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "declined");
+
+Attipoe Lebene, [04/09/2025 2:13 am]
+cookieConsent.style.display = "none";
+  });
+
+  manageLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    cookieConsent.style.display = "block";
   });
 </script>
 </body>
