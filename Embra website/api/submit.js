@@ -159,12 +159,41 @@ export default async function handler(req, res) {
   });
 
   const subject = New Submission: ${title};
-  const plain =
 
-A new submission was received for "${title}".\n +
+// Plain fallback
+  const plain =
+    A new submission was received for "${title}".\n +
     Date: ${dateStr}\n +
     Source page: ${data._page_url || "Unknown"}\n +
     Fields: ${Object.keys(data).length};
+
+  // Branded HTML body
+  const html = `
+    <div style="font-family: Arial, sans-serif; color:#333; padding:20px; border:1px solid #eee;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="https://yourdomain.com/12.png" alt="Company Logo" style="height:60px;" />
+        <h2 style="margin:10px 0; color:#444;">Embra Support Services</h2>
+      </div>
+      <p>Dear Team,</p>
+      <p>A new submission has been received from your website:</p>
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;"><strong>Form Title</strong></td>
+          <td style="padding:8px; border:1px solid #ddd;">${title}</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;"><strong>Date</strong></td>
+          <td style="padding:8px; border:1px solid #ddd;">${dateStr}</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;"><strong>Fields Submitted</strong></td>
+          <td style="padding:8px; border:1px solid #ddd;">${Object.keys(data).length}</td>
+        </tr>
+      </table>
+      <p style="margin-top:20px;">The full details are attached as a PDF.</p>
+      <p style="margin-top:20px;">Best regards,<br><strong>Embra Support Services</strong></p>
+    </div>
+  `;
 
   try {
     await transporter.sendMail({
@@ -172,13 +201,14 @@ A new submission was received for "${title}".\n +
       to: toAddress,
       subject,
       text: plain,
+      html, // ✅ branded email body
       attachments: [{ filename: ${title}.pdf, content: Buffer.from(pdfBytes) }],
     });
   } catch (e) {
     console.error("SMTP error:", e);
   }
 
-  // Return PDF to client (✅ Vercel-compatible)
+  // Return PDF to client
   res.setHeader("Content-Type", "application/pdf");
   res.setHeader("Content-Disposition", `attachment; filename="${title}.pdf"`);
   res.status(200).end(Buffer.from(pdfBytes));
