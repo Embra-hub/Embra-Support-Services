@@ -188,33 +188,41 @@ pdfDoc.addPage([595.28, 841.89]);
     });
 
     const subject = New Submission: ${title};
-    const html = `
-      <div style="font-family: Arial, sans-serif; color: #333;">
-        <div style="background: #f4f4f7; padding: 15px;">
-          <img src="https://yourdomain.com/12.png" alt="Logo" style="height:50px;">
-        </div>
-        <div style="padding: 20px;">
-          <h2 style="margin:0;">New Submission Received</h2>
-          <p><strong>Form:</strong> ${title}</p>
-          <p><strong>Date:</strong> ${dateStr}</p>
-          <p><strong>Total Fields:</strong> ${Object.keys(data).length}</p>
-          <hr style="margin:20px 0;">
-          <p>Please find the attached PDF with all details.</p>
-        </div>
-        <footer style="font-size:12px; color:#777; padding:10px; border-top:1px solid #eee;">
-          Embra Support Services
-        </footer>
-      </div>
-    `;
+const text = `New submission received from Embra Support Services.
+Form: ${title}
+Date: ${dateStr}
+Total Fields: ${Object.keys(data).length}
 
-    try {
-      await transporter.sendMail({
-        from: process.env.ZOHO_FROM ?? process.env.ZOHO_USER,
-        to: toAddress,
-        subject,
-        html,
-        attachments: [{ filename: ${title}.pdf, content: Buffer.from(pdfBytes) }],
-      });
+Please see the attached PDF for full details.`;
+
+const html = `
+  <div style="font-family: Arial, sans-serif; color: #333;">
+    <div style="background: #f4f4f7; padding: 15px;">
+      <img src="https://yourdomain.com/12.png" alt="Logo" style="height:50px;">
+    </div>
+    <div style="padding: 20px;">
+      <h2 style="margin:0;">New Submission Received</h2>
+      <p><strong>Form:</strong> ${title}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Total Fields:</strong> ${Object.keys(data).length}</p>
+      <hr style="margin:20px 0;">
+      <p>Please find the attached PDF with all details.</p>
+    </div>
+    <footer style="font-size:12px; color:#777; padding:10px; border-top:1px solid #eee;">
+      Embra Support Services
+    </footer>
+  </div>
+`;
+    await transporter.sendMail({
+  from: process.env.ZOHO_FROM ?? process.env.ZOHO_USER,
+  to: toAddress,
+  subject,
+  text,   // ✅ plain text fallback
+  html,   // ✅ HTML version
+  attachments: [
+    { filename: ${title}.pdf, content: Buffer.from(pdfBytes) },
+  ],
+});
     } catch (err) {
       console.error("SMTP error:", err);
       // don't fail the whole request, just log it
