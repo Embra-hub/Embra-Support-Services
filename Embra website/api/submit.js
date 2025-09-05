@@ -1,4 +1,3 @@
-Attipoe Lebene, [05/09/2025 1:08 pm]
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import nodemailer from "nodemailer";
 
@@ -163,7 +162,6 @@ export default async function handler(req, res) {
           ) + 14;
         if (y < 80) {
 
-Attipoe Lebene, [05/09/2025 1:08 pm]
 pdfDoc.addPage([595.28, 841.89]);
           y = 780;
         }
