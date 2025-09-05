@@ -212,31 +212,26 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-// Contact Form
-(function() {
-  var form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    var data = Object.fromEntries(new FormData(form));
-
-    fetch("/api/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-    .then(function() {
-      var name = encodeURIComponent(document.getElementById("name").value);
-      window.location.href = "contact-success.html?name=" + name;
-    })
-    .catch(function() {
-      var name = encodeURIComponent(document.getElementById("name").value);
-      window.location.href = "contact-success.html?name=" + name;
+  // Contact Form
+  (function() {
+    var form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/mkgvwzqq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function() {
+        var name = encodeURIComponent(document.getElementById('name').value  '');
+        window.location.href = 'contact-success.html?name=' + name;
+      }).catch(function() {
+        var name = encodeURIComponent(document.getElementById('name').value  '');
+        window.location.href = 'contact-success.html?name=' + name;
+      });
     });
-  });
-})();
-  
+  })();
+
   // Cookie Consent Script
   const cookieConsent = document.getElementById("cookie-consent");
   const acceptBtn = document.getElementById("accept-cookies");

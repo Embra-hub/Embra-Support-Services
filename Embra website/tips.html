@@ -96,7 +96,7 @@
     <div class="container">
       <div class="heading text-center">
 
-<h2><small>Embra Tips Of The Week</small>Hydration for Health</h2>
+<h2><small>Get Tips and Tricks</small>Hydration for Health</h2>
       </div>
       <div class="row text-center">
         <div class="col-md-4 blog-box">
@@ -122,8 +122,7 @@
     <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
     <p class="mb-2 footer-links">
       <a href="privacy.html">Privacy</a> · 
-      <a href="accessibility.html">Accessibility</a> · 
-      <a href="#" id="manageCookies">Manage Cookies</a>
+      <a href="accessibility.html">Accessibility</a>
     </p>
     <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
       <span class="mx-2">✅ Insured</span>
@@ -177,7 +176,6 @@
   const cookieConsent = document.getElementById("cookieConsent");
   const acceptBtn = document.getElementById("acceptCookies");
   const declineBtn = document.getElementById("declineCookies");
-  const manageCookies = document.getElementById("manageCookies");
 
   // Show banner if no consent saved
   if (!localStorage.getItem("cookieConsent")) {
@@ -192,12 +190,6 @@
   declineBtn.addEventListener("click", () => {
     localStorage.setItem("cookieConsent", "declined");
     cookieConsent.style.display = "none";
-  });
-
-  // Manage cookies link in footer
-  manageCookies.addEventListener("click", (e) => {
-    e.preventDefault();
-    cookieConsent.style.display = "block";
   });
 </script>
 </body>
