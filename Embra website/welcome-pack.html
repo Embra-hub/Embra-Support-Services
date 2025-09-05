@@ -25,7 +25,8 @@
 
     <h1 class="text-center mb-4">Client Welcome Pack & Pricing</h1>
 
-    <form id="welcomeForm">
+    <form action="submit.php" method="POST" id="welcomeForm">
+<input type="hidden" name="formType" value="welcome-pack">
       <!-- Client Details -->
       <h4>1. Client Details</h4>
       <div class="mb-3">
@@ -39,11 +40,11 @@
 
       <!-- Services Agreed -->
       <h4>2. Services Agreed (✓ all that apply)</h4>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Appointment Escort"> Appointment Escort</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Pillbox Setup"> Pillbox Setup</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Medication Reminder"> Medication Reminder</div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="One-to-One Support"> One-to-One Support</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Appointment Escort"> Appointment Escort</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Pillbox Setup"> Pillbox Setup</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Medication Reminder"> Medication Reminder</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="One-to-One Support"> One-to-One Support</div>
       <div class="mb-3">
         <label class="form-label">Other (please specify)</label>
         <input type="text" name="otherService" class="form-control">
@@ -89,7 +90,11 @@
         <input type="date" name="date" class="form-control" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit Agreement</button>
+      <div class="mb-3">
+  <label class="form-label">Email Address</label>
+  <input type="email" name="clientEmail" class="form-control" required>
+</div>
+<button type="submit" class="btn btn-primary">Submit Agreement</button>
     </form>
   </div>
 

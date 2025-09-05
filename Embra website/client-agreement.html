@@ -29,7 +29,8 @@
 
     <h1 class="text-center mb-4">Client Agreement & Contract</h1>
 
-    <form id="clientAgreementForm">
+    <form action="submit.php" method="POST" id="clientAgreementForm">
+<input type="hidden" name="formType" value="client-agreement">
       <!-- Client Info -->
       <h4>1. Client Information</h4>
       <div class="mb-3">
@@ -44,6 +45,10 @@
         <label class="form-label">Phone Number</label>
         <input type="tel" name="clientPhone" class="form-control" required>
       </div>
+<div class="mb-3">
+  <label class="form-label">Email Address</label>
+  <input type="email" name="clientEmail" class="form-control" required>
+</div>
       <div class="mb-3">
         <label class="form-label">Emergency Contact</label>
         <input type="text" name="emergencyContact" class="form-control">
@@ -53,13 +58,13 @@
       <h4>2. Services to be Provided</h4>
       <div class="row">
         <div class="col-md-6">
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Appointment Escorts"> Appointment Escorts</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Pillbox Setups"> Pillbox Setups</div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Appointment Escorts"> Appointment Escorts</div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Pillbox Setups"> Pillbox Setups</div>
         </div>
         <div class="col-md-6">
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Medication Reminders"> Medication Reminders</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="One-to-One Support"> One-to-One Support</div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Medication Reminders"> Medication Reminders</div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="One-to-One Support"> One-to-One Support</div>
         </div>
       </div>
       <div class="mb-3 mt-2">
@@ -122,20 +127,7 @@
         document.getElementById('signature').value = signaturePad.toDataURL();
       }
       const data = new FormData(this);
-      fetch('https://formspree.io/f/mkgvwzqq', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = 'contact-success.html';
-        } else {
-          alert('There was an error submitting the form. Please try again.');
-        }
-      }).catch(() => {
-        alert('Network error. Please check your connection and try again.');
-      });
-    });
+      
   </script>
 </body>
 </html>

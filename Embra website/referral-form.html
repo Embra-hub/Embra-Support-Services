@@ -29,7 +29,8 @@
 
     <h1 class="text-center mb-4">Referral Form</h1>
 
-    <form id="referralForm">
+    <form action="submit.php" method="POST" id="referralForm">
+<input type="hidden" name="formType" value="referral-form">
       <!-- Referrer -->
       <h4>1. Referral Details</h4>
       <div class="mb-3">
@@ -44,6 +45,10 @@
         <label class="form-label">Phone Number</label>
         <input type="tel" name="referrerPhone" class="form-control">
       </div>
+<div class="mb-3">
+  <label class="form-label">Email Address</label>
+  <input type="email" name="clientEmail" class="form-control" required>
+</div>
       <div class="mb-3">
         <label class="form-label">Email Address</label>
         <input type="email" name="referrerEmail" class="form-control" required>
@@ -163,20 +168,7 @@
       }
 
       const data = new FormData(this);
-      fetch('https://formspree.io/f/mkgvwzqq', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = 'contact-success.html';
-        } else {
-          alert('Error submitting form. Please try again.');
-        }
-      }).catch(() => {
-        alert('Network error. Please check your connection and try again.');
-      });
-    });
+      
   </script>
 </body>
 </html>
