@@ -67,7 +67,7 @@
         <input type="text" name="servicesOther" class="form-control">
       </div>
 
-      <!-- Terms (Corrected Grammar) -->
+      <!-- Terms -->
       <h4>3. Terms of Service</h4>
       <p>Services are provided by trained staff supervised by Embra Support Services.</p>
       <p>Services provided by Embra are non-clinical and designed to support daily living needs.</p>
@@ -94,7 +94,8 @@
       <!-- Signature -->
       <div class="mb-3">
         <label class="form-label">Client Signature</label>
-        <canvas id="signature-pad" width="400" height="150"></canvas>
+
+<canvas id="signature-pad" width="400" height="150"></canvas>
         <div class="text-center mt-2">
           <button type="button" id="clear" class="btn btn-sm btn-secondary">Clear</button>
         </div>
@@ -116,25 +117,30 @@
     const signaturePad = new SignaturePad(canvas);
     document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
 
-    document.getElementById('clientAgreementForm').addEventListener('submit', function(e) {
+    document.getElementById('clientAgreementForm').addEventListener('submit', async function(e) {
       e.preventDefault();
+
       if (!signaturePad.isEmpty()) {
         document.getElementById('signature').value = signaturePad.toDataURL();
       }
-      const data = new FormData(this);
-      fetch('https://formspree.io/f/mkgvwzqq', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
+
+      const formData = Object.fromEntries(new FormData(this));
+
+      try {
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
         if (response.ok) {
           window.location.href = 'contact-success.html';
         } else {
           alert('There was an error submitting the form. Please try again.');
         }
-      }).catch(() => {
+      } catch (err) {
         alert('Network error. Please check your connection and try again.');
-      });
+      }
     });
   </script>
 </body>
