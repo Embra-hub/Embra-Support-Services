@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Agreement • Embra Support Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <img src="public/img/12.png" alt="Embra Support Services Logo" style="max-height: 180px;">
+    </div>
+
+    <h1 class="text-center mb-4">Client Agreement & Contract</h1>
+
+    <form id="clientAgreementForm">
+      <input type="hidden" name="formType" value="Client Agreement">
+
+      <h4>1. Client Information</h4>
+      <div class="mb-3"><label class="form-label">Full Name</label><input type="text" name="clientName" class="form-control" required></div>
+      <div class="mb-3"><label class="form-label">Address</label><textarea name="clientAddress" class="form-control" rows="2" required></textarea></div>
+      <div class="mb-3"><label class="form-label">Phone Number</label><input type="tel" name="clientPhone" class="form-control" required></div>
+
+      <h4>Consent & Agreement</h4>
+      <p>"I understand and accept the terms and conditions of the service."</p>
+
+      <button type="submit" class="btn btn-primary">Submit Agreement</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('clientAgreementForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(this));
+      try {
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        if (response.ok) window.location.href = 'contact-success.html';
+        else alert('Error submitting form.');
+      } catch (err) {
+        alert('Network error. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
