@@ -22,112 +22,20 @@
 </head>
 <body>
   <div class="container py-5">
-    <!-- Logo -->
-    <div class="text-center mb-4">
-      <img src="img/12.png" alt="Embra Support Services Logo" style="max-height: 180px;">
-    </div>
-
-    <h1 class="text-center mb-4">Client Agreement & Contract</h1>
-
-    <form action="submit.php" method="POST" id="clientAgreementForm">
-<input type="hidden" name="formType" value="client-agreement">
-      <!-- Client Info -->
-      <h4>1. Client Information</h4>
-      <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" name="clientName" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Address</label>
-        <textarea name="clientAddress" class="form-control" rows="2" required></textarea>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Phone Number</label>
-        <input type="tel" name="clientPhone" class="form-control" required>
-      </div>
-<div class="mb-3">
-  <label class="form-label">Email Address</label>
-  <input type="email" name="clientEmail" class="form-control" required>
-</div>
-      <div class="mb-3">
-        <label class="form-label">Emergency Contact</label>
-        <input type="text" name="emergencyContact" class="form-control">
-      </div>
-
-      <!-- Services -->
-      <h4>2. Services to be Provided</h4>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Appointment Escorts"> Appointment Escorts</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Pillbox Setups"> Pillbox Setups</div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="Medication Reminders"> Medication Reminders</div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" name="services[]" value="One-to-One Support"> One-to-One Support</div>
-        </div>
-      </div>
-      <div class="mb-3 mt-2">
-        <label class="form-label">Other (please specify)</label>
-        <input type="text" name="servicesOther" class="form-control">
-      </div>
-
-      <!-- Terms (Corrected Grammar) -->
-      <h4>3. Terms of Service</h4>
-      <p>Services are provided by trained staff supervised by Embra Support Services.</p>
-      <p>Services provided by Embra are non-clinical and designed to support daily living needs.</p>
-
-      <h4>4. Fees & Payment</h4>
-      <p>Fees are agreed upon in advance. Invoices may be issued weekly, fortnightly, or monthly. Travel and weekend surcharges may apply.</p>
-
-      <h4>5. Cancellation Policy</h4>
-      <p>Please note that 24 hours’ notice is required for any cancellations.</p>
-      <p>Late cancellations may incur a 50% service charge.</p>
-
-      <h4>6. Confidentiality & Data Protection</h4>
-      <p>Your information is secured in line with the Data Protection Act.</p>
-      <p>We comply with GDPR and share data only when necessary for your health and wellbeing needs.</p>
-
-      <h4>7. Feedback & Concerns</h4>
-      <p>We welcome constructive feedback to enhance the services we provide to our clients.</p>
-      <p>We are committed to resolving any issues promptly and respectfully.</p>
-
-      <!-- Consent -->
-      <h4>8. Consent & Agreement</h4>
-      <p>"I understand and accept the terms and conditions of the service."</p>
-
-      <!-- Signature -->
-      <div class="mb-3">
-        <label class="form-label">Client Signature</label>
-        <canvas id="signature-pad" width="400" height="150"></canvas>
-        <div class="text-center mt-2">
-          <button type="button" id="clear" class="btn btn-sm btn-secondary">Clear</button>
-        </div>
-        <input type="hidden" name="signature" id="signature">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Date</label>
-        <input type="date" name="date" class="form-control" required>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit Agreement</button>
-    </form>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
-  <script>
-    const canvas = document.getElementById('signature-pad');
-    const signaturePad = new SignaturePad(canvas);
-    document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
-
-    document.getElementById('clientAgreementForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!signaturePad.isEmpty()) {
-        document.getElementById('signature').value = signaturePad.toDataURL();
-      }
-      const data = new FormData(this);
-      
-  </script>
-</body>
-</html>
+    
+    
+    <iframe
+      id="JotFormIFrame-252515482025048"
+      title="Client Agreement & Contract"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/252515482025048"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252515482025048']", "https://form.jotform.com/")</script>
+    
