@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Client Welcome Pack • EMBRA Support Services</title>
+  <title>Client Welcome Pack â€¢ EMBRA Support Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <style>
     canvas {
@@ -18,20 +18,99 @@
 </head>
 <body>
   <div class="container py-5">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="img/12.png" alt="Embra Support Services Logo" style="max-height: 180px;">
+    </div>
 
-    
-    <iframe
-      id="JotFormIFrame-252514313654048"
-      title="        Client Welcome Pack & Pricing"
-      onload="window.parent.scrollTo(0,0)"
-      allowtransparency="true"
-      allow="geolocation; microphone; camera; fullscreen; payment"
-      src="https://form.jotform.com/252514313654048"
-      frameborder="0"
-      style="min-width:100%;max-width:100%;height:539px;border:none;"
-      scrolling="no"
-    >
-    </iframe>
-    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252514313654048']", "https://form.jotform.com/")</script>
-    
+    <h1 class="text-center mb-4">Client Welcome Form & Pricing</h1>
+
+    <form id="welcomeForm">
+      <!-- Client Details -->
+      <h4>1. Client Details</h4>
+      <div class="mb-3">
+        <label class="form-label">Client Name</label>
+        <input type="text" name="clientName" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Start Date</label>
+        <input type="date" name="startDate" class="form-control" required>
+      </div>
+
+      <!-- Services Agreed -->
+      <h4>2. Services Agreed (âœ“ all that apply)</h4>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Wellbeing Check-ins"> Wellbeing Check-ins</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Appointment Escort"> Appointment Escort</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Pillbox Setup"> Pillbox Setup</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="Medication Reminder"> Medication Reminder</div>
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="services" value="One-to-One Support"> One-to-One Support</div>
+      <div class="mb-3">
+        <label class="form-label">Other (please specify)</label>
+        <input type="text" name="otherService" class="form-control">
+      </div>
+
+      <!-- Visit Frequency -->
+      <h4>3. Visit Frequency</h4>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="One-time"> One-time</div>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="Weekly"> Weekly</div>
+      <div class="form-check"><input class="form-check-input" type="radio" name="frequency" value="Multiple times per week"> Multiple times per week</div>
+      <div class="form-check mb-3"><input class="form-check-input" type="radio" name="frequency" value="As needed"> As needed</div>
+
+      <!-- Payment -->
+      <h4>4. Payment</h4>
+      <div class="mb-3">
+        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="paymentDue" value="Weekly"> Weekly</div>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="paymentDue" value="Monthly"> Monthly</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Method Accepted</label><br>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="paymentMethod" value="Bank Transfer"> Bank Transfer</div>
+        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="paymentMethod" value="Cash"> Cash</div>
+        <div class="form-check form-check-inline">Other: <input type="text" name="otherPaymentMethod" class="form-control d-inline-block" style="width:auto;"></div>
+      </div>
+
+      <!-- Agreement -->
+      <h4>5. Agreement</h4>
+      <p>By signing below, both parties agree to the terms outlined.</p>
+
+      <!-- Signature -->
+      <div class="mb-3">
+        <label class="form-label">Client/Representative Signature</label>
+        <canvas id="signature-pad" width="400" height="150"></canvas>
+        <button type="button" id="clear" class="btn btn-sm btn-secondary mt-2">Clear</button>
+        <input type="hidden" name="signature" id="signature">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">EMBRA Representative Signature</label>
+        <input type="text" name="embraSignature" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" name="date" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Agreement</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+  <script>
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas);
+    document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
+
+    document.getElementById('welcomeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!signaturePad.isEmpty()) {
+        document.getElementById('signature').value = signaturePad.toDataURL();
+      }
+      const data = new FormData(this);
+      fetch('https://formspree.io/f/mkgvwzqq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(() => window.location.href = 'success.html')
+        .catch(() => window.location.href = 'success.html');
+    });
+  </script>
+</body>
