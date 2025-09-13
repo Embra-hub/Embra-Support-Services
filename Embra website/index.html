@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -23,7 +23,7 @@
   .social-links a { margin: 0 8px; color: #fff; font-size: 1.2rem; }
   .disclaimer-card { background-color: #fff3cd; border: 1px solid #ffeeba; }
 
-  /* Cookie Banner Styling */
+  /* ✅ Standard Cookie Banner Styling */
   #cookie-consent {
     position: fixed;
     bottom: 0;
@@ -31,51 +31,24 @@
     right: 0;
     background: #222;
     color: #fff;
-    padding: 15px 20px;
+    padding: 15px;
     display: none;
-    z-index: 10000;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-
-  #cookie-consent p {
-    margin: 0 0 10px;
+    z-index: 9999;
     font-size: 14px;
-    line-height: 1.5;
   }
-
-  .cookie-buttons {
-    margin-top: 5px;
-  }
-
-  #cookie-consent button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  #accept-cookies {
-    background: #4CAF50;
-    color: #fff;
-  }
-
-  #decline-cookies {
-    background: #f44336;
-    color: #fff;
-  }
-
-  #cookie-consent button:hover {
-    opacity: 0.9;
-  }
-
-  footer a#manage-cookies {
-    color: #ffcc00;
+  #cookie-consent a {
+    color: #0d6efd;
     text-decoration: underline;
-    font-size: 14px;
-    margin-left: 10px;
+  }
+  #cookie-consent .btn {
+    margin-left: 8px;
+  }
+
+  /* ✅ Hero title styling */
+  .hero-title {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    display: inline-block;
   }
 </style>
 </head>
@@ -95,8 +68,7 @@
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
         <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="files.html">Forms</a></li>
+        <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
       </ul>
     </div>
   </div>
@@ -106,11 +78,12 @@
   <!-- Hero Section -->
   <section class="jumbotron text-center bg-white py-5">
     <div class="container">
-      <h1 class="display-5">Compassionate In-Home Care & Elderly Support</h1>
+      <h1 class="display-5 hero-title">Compassionate In-Home Care & Elderly Support</h1>
       <p class="lead">Non-medical, in-home support led by qualified nurses to enhance health and wellbeing.</p>
       <p>
-        <a class="btn btn-primary btn-lg" href="files.html">📄 View &amp; Fill Forms</a>
-        <a class="btn btn-outline-primary btn-lg" href="contact.html">Book a Chat Today</a>
+        <a class="btn btn-primary btn-lg fw-semibold text-light" href="https://wa.me/+447956515433" target="_blank">
+          💬 Book a Chat Today
+        </a>
       </p>
     </div>
   </section>
@@ -123,13 +96,13 @@
           <div class="swiper-slide"><img src="img/12.jpg" alt="Gallery 1" class="img-fluid"></div>
           <div class="swiper-slide"><img src="img/13.jpg" alt="Gallery 2" class="img-fluid"></div>
           <div class="swiper-slide"><img src="img/11.jpg" alt="Gallery 3" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="img/9.jpg" alt="Gallery 1" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="img/6.jpg" alt="Gallery 3" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="img/1.jpg" alt="Gallery 3" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="img/8.jpg" alt="Gallery 2" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="img/9.jpg" alt="Gallery 4" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="img/6.jpg" alt="Gallery 5" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="img/1.jpg" alt="Gallery 6" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="img/8.jpg" alt="Gallery 7" class="img-fluid"></div>
         </div>
 
-<div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
@@ -177,23 +150,25 @@
       <a href="mailto:embra@embrasupportservices.com" class="text-light"><i class="fas fa-envelope"></i> embra@embrasupportservices.com</a>
     </p>
     <div class="social-links mt-3">
-      <a href="https://www.facebook.com/share/1ANQae3edG/?mibextid=wwXIfr" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/embra_support" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/embrasupport" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com/share/1ANQae3edG/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       <a href="https://Wa.me/+447956515433" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent">
-  <p>
-    We use cookies to improve your browsing experience and analyze website traffic. 
-    By clicking "Accept", you consent to our use of cookies.
-  </p>
-  <div class="cookie-buttons">
-    <button id="accept-cookies">Accept</button>
-    <button id="decline-cookies">Decline</button>
+<!-- ✅ Standard Cookie Banner -->
+<div id="cookie-consent" role="dialog" aria-live="polite">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <p class="mb-2 mb-md-0">
+      We use cookies to improve your browsing experience and analyze traffic. 
+      <a href="privacy.html">Learn more</a>.
+    </p>
+    <div>
+      <button class="btn btn-success btn-sm" id="accept-cookies">Accept</button>
+      <button class="btn btn-danger btn-sm" id="decline-cookies">Decline</button>
+    </div>
   </div>
 </div>
 
@@ -211,37 +186,44 @@
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
     });
 
-    // Cookie Consent Script
-    const cookieConsent = document.getElementById("cookie-consent");
+    // ✅ Cookie Consent Script
+    const cookieBanner = document.getElementById("cookie-consent");
     const acceptBtn = document.getElementById("accept-cookies");
     const declineBtn = document.getElementById("decline-cookies");
     const manageLink = document.getElementById("manage-cookies");
 
-    // Show banner if no choice saved
     if (!localStorage.getItem("cookieConsent")) {
-      cookieConsent.style.display = "block";
+      cookieBanner.style.display = "block";
     }
 
-    // Accept
     acceptBtn.addEventListener("click", () => {
       localStorage.setItem("cookieConsent", "accepted");
-
-cookieConsent.style.display = "none";
+      cookieBanner.style.display = "none";
     });
 
-    // Decline
     declineBtn.addEventListener("click", () => {
       localStorage.setItem("cookieConsent", "declined");
-      cookieConsent.style.display = "none";
+      cookieBanner.style.display = "none";
     });
 
-    // Manage Cookies (reopen banner)
     if (manageLink) {
       manageLink.addEventListener("click", (e) => {
         e.preventDefault();
-        cookieConsent.style.display = "block";
+        cookieBanner.style.display = "block";
       });
     }
+
+    // ✅ Auto close mobile nav after clicking a link
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.getElementById('mainNav');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navbarCollapse).toggle();
+        }
+      });
+    });
   });
 </script>
 </body>

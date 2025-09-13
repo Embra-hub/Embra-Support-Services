@@ -18,7 +18,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <style>
     /* Accessibility & tweaks */
@@ -82,7 +83,7 @@
       color: #fff !important;
     }
 
-    /* Cookie Banner Styling */
+    /* ✅ Standard Cookie Banner Styling */
     #cookie-consent {
       position: fixed;
       bottom: 0;
@@ -90,51 +91,17 @@
       right: 0;
       background: #222;
       color: #fff;
-      padding: 15px 20px;
+      padding: 15px;
       display: none;
-      z-index: 10000;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    #cookie-consent p {
-      margin: 0 0 10px;
+      z-index: 9999;
       font-size: 14px;
-      line-height: 1.5;
     }
-
-    .cookie-buttons {
-      margin-top: 5px;
-    }
-
-    #cookie-consent button {
-      padding: 8px 15px;
-      margin: 0 5px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    #accept-cookies {
-      background: #4CAF50;
-      color: #fff;
-    }
-
-    #decline-cookies {
-      background: #f44336;
-      color: #fff;
-    }
-
-    #cookie-consent button:hover {
-      opacity: 0.9;
-    }
-
-    footer a#manage-cookies {
-      color: #ffcc00;
+    #cookie-consent a {
+      color: #0d6efd;
       text-decoration: underline;
-      font-size: 14px;
-      margin-left: 10px;
+    }
+    #cookie-consent .btn {
+      margin-left: 8px;
     }
   </style>
 </head>
@@ -142,7 +109,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Navigation (same as index.html) -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">Embra Support Services</a>
@@ -150,14 +117,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
-
-<ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="coverage.html">Coverage</a></li>
         <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="forms.html">Forms</a></li>
       </ul>
     </div>
   </div>
@@ -187,14 +153,13 @@
   </section>
 </main>
 
-<!-- Footer (same as index.html) -->
+<!-- Footer -->
 <footer class="py-4" style="background-color: #0d6efd; color: #fff;" role="contentinfo">
   <div class="container text-center">
     <p class="mb-1">&copy; <span id="year"></span> Embra Support Services</p>
     <p class="mb-2">
       <a class="text-light" href="privacy.html">Privacy</a> · 
-      <a class="text-light" href="accessibility.html">Accessibility</a> · 
-      <a href="#" id="manage-cookies">Manage Cookies</a>
+      <a class="text-light" href="accessibility.html">Accessibility</a>
     </p>
     <div class="d-flex justify-content-center mb-3" aria-label="Trust signals">
       <span class="mx-2">✅ Insured</span>
@@ -212,21 +177,23 @@
     <div class="social-links mt-3">
       <a href="https://www.facebook.com/share/1ANQae3edG/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/embra_support" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://x.com/embrasupport" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       <a href="https://Wa.me/+447956515433" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent">
-  <p>
-    We use cookies to improve your browsing experience and analyze website traffic. 
-    By clicking "Accept", you consent to our use of cookies.
-  </p>
-  <div class="cookie-buttons">
-    <button id="accept-cookies">Accept</button>
-    <button id="decline-cookies">Decline</button>
+<!-- ✅ Cookie Banner goes JUST BEFORE </body> -->
+<div id="cookie-consent" role="dialog" aria-live="polite">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <p class="mb-2 mb-md-0">
+      We use cookies to improve your browsing experience and analyze traffic. 
+      <a href="privacy.html">Learn more</a>.
+    </p>
+    <div>
+      <button class="btn btn-success btn-sm" id="accept-cookies">Accept</button>
+      <button class="btn btn-danger btn-sm" id="decline-cookies">Decline</button>
+    </div>
   </div>
 </div>
 
@@ -235,32 +202,35 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Cookie Consent Script
-  const cookieConsent = document.getElementById("cookie-consent");
+  // ✅ Cookie Banner Script
+  const cookieBanner = document.getElementById("cookie-consent");
   const acceptBtn = document.getElementById("accept-cookies");
   const declineBtn = document.getElementById("decline-cookies");
-  const manageLink = document.getElementById("manage-cookies");
 
   if (!localStorage.getItem("cookieConsent")) {
-    cookieConsent.style.display = "block";
+    cookieBanner.style.display = "block";
   }
 
   acceptBtn.addEventListener("click", () => {
-
-localStorage.setItem("cookieConsent", "accepted");
-    cookieConsent.style.display = "none";
+    localStorage.setItem("cookieConsent", "accepted");
+    cookieBanner.style.display = "none";
   });
 
   declineBtn.addEventListener("click", () => {
     localStorage.setItem("cookieConsent", "declined");
-    cookieConsent.style.display = "none";
+    cookieBanner.style.display = "none";
   });
 
-  manageLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    cookieConsent.style.display = "block";
+  // ✅ Navbar auto-close (mobile)
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarCollapse = document.getElementById('mainNav');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+      }
+    });
   });
 </script>
-
 </body>
 </html>
