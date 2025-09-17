@@ -25,7 +25,10 @@
 
     <h1 class="text-center mb-4">Client Welcome Form & Pricing</h1>
 
-    <form id="welcomeForm">
+    <form id="welcomeForm" action="https://formspree.io/f/mkgvwzqq" method="POST">
+      <!-- Redirect field (works even without JS) -->
+      <input type="hidden" name="_redirect" value="success.html">
+
       <!-- Client Details -->
       <h4>1. Client Details</h4>
       <div class="mb-3">
@@ -93,24 +96,23 @@
     </form>
   </div>
 
+  <!-- Signature Pad Library -->
   <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+  
+  <!-- Submission Script -->
   <script>
     const canvas = document.getElementById('signature-pad');
     const signaturePad = new SignaturePad(canvas);
+
     document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
 
     document.getElementById('welcomeForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+      // Save signature into hidden field before normal form submission
       if (!signaturePad.isEmpty()) {
         document.getElementById('signature').value = signaturePad.toDataURL();
       }
-      const data = new FormData(this);
-      fetch('https://formspree.io/f/mkgvwzqq', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(() => window.location.href = 'success.html')
-        .catch(() => window.location.href = 'success.html');
+      // Let the browser handle submission to Formspree
     });
   </script>
 </body>
+</html>

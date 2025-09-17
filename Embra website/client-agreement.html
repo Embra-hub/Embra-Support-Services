@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Client Agreement â€¢ Embra Support Services</title>
+  <title>Client Agreement • Embra Support Services</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <style>
     h4 {
@@ -67,7 +67,7 @@
         <input type="text" name="servicesOther" class="form-control">
       </div>
 
-      <!-- Terms (Corrected Grammar) -->
+      <!-- Terms -->
       <h4>3. Terms of Service</h4>
       <p>Services are provided by trained staff supervised by Embra Support Services.</p>
       <p>Services provided by Embra are non-clinical and designed to support daily living needs.</p>
@@ -129,11 +129,10 @@
       }).then(response => {
         if (response.ok) {
           window.location.href = 'contact-success.html';
-        } else {
-          alert('There was an error submitting the form. Please try again.');
         }
+        // no error alerts anymore
       }).catch(() => {
-        alert('Network error. Please check your connection and try again.');
+        // no network error alerts anymore
       });
     });
   </script>
