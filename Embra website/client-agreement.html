@@ -14,7 +14,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       width: 100%;
       max-width: 400px;
     }
@@ -29,7 +29,10 @@
 
     <h1 class="text-center mb-4">Agreement Form</h1>
 
-    <form id="clientAgreementForm">
+    <form id="clientAgreementForm" action="https://formspree.io/f/mkgvwzqq" method="POST">
+      <!-- Redirect (same style as Welcome Form) -->
+      <input type="hidden" name="_redirect" value="success.html">
+
       <!-- Client Info -->
       <h4>1. Client Information</h4>
       <div class="mb-3">
@@ -110,30 +113,19 @@
     </form>
   </div>
 
+  <!-- Signature Pad -->
   <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
   <script>
     const canvas = document.getElementById('signature-pad');
     const signaturePad = new SignaturePad(canvas);
+
     document.getElementById('clear').addEventListener('click', () => signaturePad.clear());
 
-    document.getElementById('clientAgreementForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    document.getElementById('clientAgreementForm').addEventListener('submit', function() {
       if (!signaturePad.isEmpty()) {
         document.getElementById('signature').value = signaturePad.toDataURL();
       }
-      const data = new FormData(this);
-      fetch('https://formspree.io/f/mkgvwzqq', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = 'contact-success.html';
-        }
-        // no error alerts anymore
-      }).catch(() => {
-        // no network error alerts anymore
-      });
+      // normal browser submission handles the rest
     });
   </script>
 </body>
